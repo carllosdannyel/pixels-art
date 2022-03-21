@@ -3,6 +3,7 @@ const father = document.getElementsByTagName('body')[0];
 const son = document.createElement('section');
 father.appendChild(son);
 const sectionFather = document.createElement('section');
+sectionFather.id = 'pixel-board';
 son.id = 'color-palette';
 father.appendChild(sectionFather);
 
@@ -21,7 +22,7 @@ creatElements('div', 'color');
 function creatPallet() {
   for (let i = 1; i <= 25; i += 1) {
     const son25 = document.createElement('section');
-    son25.classList = 'stylePallet';
+    son25.classList = 'pixel';
     sectionFather.appendChild(son25);
   }
 }
