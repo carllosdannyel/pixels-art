@@ -17,6 +17,8 @@ function creatElements(element, classes) {
   }
 }
 creatElements('div', 'color');
+const selected = document.getElementsByClassName('color')[0];
+selected.classList.add('selected');
 
 // cria a paleta de cores
 function creatPallet() {
