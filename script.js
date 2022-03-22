@@ -29,3 +29,17 @@ function creatPallet() {
   }
 }
 creatPallet();
+
+const two = document.querySelectorAll('div')[1];
+const three = document.querySelectorAll('div')[2];
+const four = document.querySelectorAll('div')[3];
+function handleChangeTech(event) {
+  const techElement = document.querySelector('.selected');
+  techElement.classList.remove('selected');
+  event.target.classList.add('selected');
+}
+
+selected.addEventListener('click', handleChangeTech);
+two.addEventListener('click', handleChangeTech);
+three.addEventListener('click', handleChangeTech);
+four.addEventListener('click', handleChangeTech);
