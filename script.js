@@ -1,7 +1,14 @@
+/* eslint-disable no-param-reassign */
 // cria o núcle que é uma section com id color-palette
 const father = document.getElementsByTagName('body')[0];
 const son = document.createElement('section');
 father.appendChild(son);
+
+const button = document.createElement('button');
+button.id = 'clear-board';
+button.innerText = 'Limpar';
+father.appendChild(button);
+
 const sectionFather = document.createElement('section');
 sectionFather.id = 'pixel-board';
 son.id = 'color-palette';
@@ -65,3 +72,11 @@ const allPixels = document.querySelectorAll('section')[1].children;
 for (let i = 0; i < allPixels.length; i += 1) {
   allPixels[i].addEventListener('click', pixelsEvents);
 }
+
+function clear() {
+  const resets = document.getElementsByClassName('pixel');
+  for (let i = 0; i < resets.length; i += 1) {
+    resets[i].style.backgroundColor = 'white';
+  }
+}
+button.addEventListener('click', clear);
