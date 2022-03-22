@@ -1,3 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+body {
+  background-color: #252525;
+  font-size: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1 {
+  margin-bottom: 20px;
+  background-color: #519548;
+  text-align: center;
+}
+
 .color {
   display: inline-block;
   border: 1px solid black;
@@ -16,7 +35,9 @@
 }
 
 #pixel-board {
-  width: 210px;
+  margin-top: 20px;
+  margin-left: 42%;
+  margin-right: 42%;
 }
 
 .black {
@@ -33,4 +54,9 @@
 
 .green {
   background-color: green;
+}
+
+#board-size {
+  width: 100px;
+  text-align: center;
 }

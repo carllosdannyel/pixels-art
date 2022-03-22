@@ -9,6 +9,15 @@ button.id = 'clear-board';
 button.innerText = 'Limpar';
 father.appendChild(button);
 
+const input = document.createElement('input');
+input.id = 'board-size';
+father.appendChild(input);
+
+const buttonOfInput = document.createElement('button');
+buttonOfInput.id = 'generate-board';
+buttonOfInput.innerText = 'VQV';
+father.appendChild(buttonOfInput);
+
 const sectionFather = document.createElement('section');
 sectionFather.id = 'pixel-board';
 son.id = 'color-palette';
