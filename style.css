@@ -26,18 +26,25 @@ h1 {
 }
 
 .pixel {
-  display: inline-block;
   background-color: white;
   width: 40px;
   height: 40px;
   border: 1px solid;
-  margin: 0;
 }
 
 #pixel-board {
-  margin-top: 20px;
-  margin-left: 42%;
-  margin-right: 42%;
+  width: 200px;
+  background-color: orange;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  height: 50px;
+  width: 50px;
+  background-color: red;
+  position: absolute;
+  left: 44.5%;
+  top: 250px;
+  transform: translate(-50%, -50%);
 }
 
 .black {
