@@ -17,6 +17,16 @@ function creatElements(element, classes) {
   }
 }
 creatElements('div', 'color');
+
+const divOne = document.getElementsByClassName('color')[0];
+divOne.style.backgroundColor = 'black';
+const divTwo = document.getElementsByClassName('color')[1];
+divTwo.style.backgroundColor = 'red';
+const divThree = document.getElementsByClassName('color')[2];
+divThree.style.backgroundColor = 'blue';
+const divFour = document.getElementsByClassName('color')[3];
+divFour.style.backgroundColor = 'green';
+
 const selected = document.getElementsByClassName('color')[0];
 selected.classList.add('selected');
 
@@ -33,6 +43,7 @@ creatPallet();
 const two = document.querySelectorAll('div')[1];
 const three = document.querySelectorAll('div')[2];
 const four = document.querySelectorAll('div')[3];
+
 function handleChangeTech(event) {
   const techElement = document.querySelector('.selected');
   techElement.classList.remove('selected');
@@ -43,3 +54,14 @@ selected.addEventListener('click', handleChangeTech);
 two.addEventListener('click', handleChangeTech);
 three.addEventListener('click', handleChangeTech);
 four.addEventListener('click', handleChangeTech);
+
+function pixelsEvents(event) {
+  const colorOfElement = document.querySelector('.selected');
+  const color = colorOfElement.style.backgroundColor;
+  event.target.style.backgroundColor = color;
+}
+
+const allPixels = document.querySelectorAll('section')[1].children;
+for (let i = 0; i < allPixels.length; i += 1) {
+  allPixels[i].addEventListener('click', pixelsEvents);
+}
