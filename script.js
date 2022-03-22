@@ -11,6 +11,7 @@ father.appendChild(button);
 
 const input = document.createElement('input');
 input.id = 'board-size';
+input.placeholder = 'Digite um número de 5 à 50';
 father.appendChild(input);
 
 const buttonOfInput = document.createElement('button');

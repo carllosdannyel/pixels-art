@@ -32,14 +32,12 @@ h1 {
 }
 
 #pixel-board {
-  width: 200px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  height: 50px;
   position: absolute;
-  left: 44.5%;
-  top: 250px;
+  left: 50%;
+  top: 300px;
   transform: translate(-50%, -50%);
 }
 
@@ -62,4 +60,19 @@ h1 {
 #board-size {
   width: 100px;
   text-align: center;
+}
+
+#clear-board {
+  padding: 10px;
+  /* margin: 10px; */
+}
+
+#board-size {
+  padding: 10px;
+  width: 200px;
+}
+
+#generate-board {
+  padding: 10px;
+  /* margin: 10px; */
 }
