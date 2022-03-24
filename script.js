@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign */
+// Verifique se a cor preta ainda está presente e é a primeira na sua paleta de cores
 // cria o núcle que é uma section com id color-palette
 const father = document.getElementsByTagName('body')[0];
 const son = document.createElement('section');
@@ -82,10 +82,11 @@ two.addEventListener('click', handleChangeTech);
 three.addEventListener('click', handleChangeTech);
 four.addEventListener('click', handleChangeTech);
 
-function pixelsEvents(event) {
+function pixelsEvents(changeColor) {
   const colorOfElement = document.querySelector('.selected');
   const color = colorOfElement.style.backgroundColor;
-  event.target.style.backgroundColor = color;
+  const colors = changeColor.target;
+  colors.style.backgroundColor = color;
 }
 
 const allPixels = document.querySelectorAll('section')[1].children;
@@ -101,19 +102,36 @@ function clear() {
 }
 button.addEventListener('click', clear);
 
-// function alerts() {
-//   const pixels = document.getElementsByClassName('pixel');
-//   if (input.value >= 1 && input.value <= 7) {
-//     for (let i = 0; i < pixels.length; i += 1) {
-//       let square = pixels[i];
-//       let value = input.value * 2;
-//       square.style.heigth = value.toString() + 'px';
-//       square += 'px';
-//       square.style.width = (input.value * 2).toString;
-//       square += 'px';
-//     }
-//   } else {
-//     alert('Board inválido!');
+// function changeSize() {
+//   const a = document.querySelectorAll('.pixel');
+//   for (let index = 0; index < a.length; index += 1) {
+//     const b = input.value * input.value;
+//     a[index].style.width = `${b}px`;
+//     a[index].style.height = `${b}px`;
+//     a[index].style.backgroundColor = 'white';
 //   }
 // }
-// buttonOfInput.addEventListener('click', alerts);
+// buttonOfInput.addEventListener('click', changeSize);
+
+function alerts() {
+  if (input.value === '') {
+    alert('Board inválido!');
+    input.value = null;
+  }
+}
+buttonOfInput.addEventListener('click', alerts);
+
+function changeBoard() {
+  let inputValue = document.querySelector('input').value;
+  inputValue *= inputValue;
+  inputValue -= 25;
+  const sizeBoard = document.querySelector('#pixel-board');
+  sizeBoard.style.gridTemplateColumns = `repeat(${input.value}, ${1}fr)`;
+  sizeBoard.style.gridTemplateRows = `repeat(${input.value}, ${1}fr)`;
+  for (let i = 1; i <= inputValue; i += 1) {
+    const sonInput = document.createElement('section');
+    sonInput.classList = 'pixel';
+    sectionFather.appendChild(sonInput);
+  }
+}
+buttonOfInput.addEventListener('click', changeBoard);

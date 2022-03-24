@@ -45,10 +45,6 @@ h1 {
   width: 200px;
 }
 
-#clear-board {
-  padding: 10px;
-}
-
-#generate-board {
+#clear-board, #generate-board {
   padding: 10px;
 }
