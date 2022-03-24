@@ -1,7 +1,5 @@
 * {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   text-align: center;
 }
 
@@ -37,42 +35,20 @@ h1 {
   grid-template-rows: repeat(5, 1fr);
   position: absolute;
   left: 50%;
-  top: 300px;
+  top: 400px;
   transform: translate(-50%, -50%);
 }
 
-.black {
-  background-color: black;
-}
-
-.red {
-  background-color: red;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.green {
-  background-color: green;
-}
-
 #board-size {
-  width: 100px;
   text-align: center;
-}
-
-#clear-board {
-  padding: 10px;
-  /* margin: 10px; */
-}
-
-#board-size {
   padding: 10px;
   width: 200px;
 }
 
+#clear-board {
+  padding: 10px;
+}
+
 #generate-board {
   padding: 10px;
-  /* margin: 10px; */
 }

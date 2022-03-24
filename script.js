@@ -11,7 +11,10 @@ father.appendChild(button);
 
 const input = document.createElement('input');
 input.id = 'board-size';
-input.placeholder = 'Digite um número de 5 à 50';
+input.type = 'number';
+input.min = 1;
+input.max = 7;
+input.placeholder = 'Digite um número de 1 à 7';
 father.appendChild(input);
 
 const buttonOfInput = document.createElement('button');
@@ -35,14 +38,21 @@ function creatElements(element, classes) {
 }
 creatElements('div', 'color');
 
+function gerarCor(opacidade = 1) {
+  const r = Math.random() * 255;
+  const g = Math.random() * 255;
+  const b = Math.random() * 255;
+  return `rgba(${r}, ${g}, ${b}, ${opacidade})`;
+}
+
 const divOne = document.getElementsByClassName('color')[0];
 divOne.style.backgroundColor = 'black';
 const divTwo = document.getElementsByClassName('color')[1];
-divTwo.style.backgroundColor = 'red';
+divTwo.style.backgroundColor = gerarCor();
 const divThree = document.getElementsByClassName('color')[2];
-divThree.style.backgroundColor = 'blue';
+divThree.style.backgroundColor = gerarCor();
 const divFour = document.getElementsByClassName('color')[3];
-divFour.style.backgroundColor = 'green';
+divFour.style.backgroundColor = gerarCor();
 
 const selected = document.getElementsByClassName('color')[0];
 selected.classList.add('selected');
@@ -90,3 +100,20 @@ function clear() {
   }
 }
 button.addEventListener('click', clear);
+
+// function alerts() {
+//   const pixels = document.getElementsByClassName('pixel');
+//   if (input.value >= 1 && input.value <= 7) {
+//     for (let i = 0; i < pixels.length; i += 1) {
+//       let square = pixels[i];
+//       let value = input.value * 2;
+//       square.style.heigth = value.toString() + 'px';
+//       square += 'px';
+//       square.style.width = (input.value * 2).toString;
+//       square += 'px';
+//     }
+//   } else {
+//     alert('Board inválido!');
+//   }
+// }
+// buttonOfInput.addEventListener('click', alerts);
